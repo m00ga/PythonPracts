@@ -1,6 +1,8 @@
 # Задание 1
+import math
 
-def zad1():
+
+def zad_1():
     num = int(input())
 
     if num < 37:
@@ -22,7 +24,22 @@ def zad_2():
     d = int(input())
 
 
+# Задание 3
+
+def zad_3():
+    s = float(input("Площа зали: "))
+    r = float(input("Радіус: "))
+    k = float(input("Прохід: "))
+
+    side = math.sqrt(s)
+    s_r = side / 2
+    r = r - k
+
+    if s_r <= r:
+        print("good")
+    else:
+        print("bad")
+
 
 if __name__ == '__main__':
-    zad1()
     exit(0)
