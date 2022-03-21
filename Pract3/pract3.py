@@ -239,5 +239,4 @@ def zad_19():
 
 
 if __name__ == '__main__':
-    print("All my homeworks at https://github.com/m00ga/PythonPracts")
     exit(0)
