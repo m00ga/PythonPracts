@@ -5,8 +5,10 @@ import random
 
 # Задание 1
 
-def zad_1():
-    pass
+def zad_1(a, b, h):
+    for x in range(a, b + 1, h):
+        y = abs(x)
+        print(f"x = {x} \t f(y) = {y}")
 
 
 # Задание 2
@@ -14,19 +16,33 @@ def zad_1():
 def zad_2(a, b, c):
     p = (a + b + c) / 2
     s = sqrt(p * (p - a) * (p - b) * (p - c))
-    print(f"Площа трикутника: {s}")
+    # print(f"Площа трикутника: {s}")
+
+    return s
 
 
 # Задание 3
 
 def zad_3(a):
-    pass
+    s = zad_2(a, a, a)
+    s = s * 6
+
+    print(f"Площа правильного шестикутника: {s}")
 
 
 # Задание 4
 
-def zad_4():
-    pass
+def zad_4(a, b, c):
+    ma, mi = a, b
+
+    if b > ma: ma = b
+    if c > ma: ma = c
+
+    if mi > a: mi = a
+    if mi > c: mi = c
+
+    print(f"Максимальне із трьох чисел: {ma}")
+    print(f"Мінімальне із трьох чисел: {mi}")
 
 
 # Задание 5
@@ -47,7 +63,7 @@ def zad_6_1(k):
     for _ in range(2, k):
         f1, f2 = f2, f1 + f2
 
-    print(f2)
+    print(f"{k} член ряду Фібоначчі: {f2}")
 
 
 # с рекурсией
@@ -85,7 +101,7 @@ def zad_8(n):
 def zad_9(n):
     if n == 2 or n == 3: return True
     if n % 2 == 0 or n < 2: return False
-    for i in range(3, int(sqrt(n))+1, 2):
+    for i in range(3, int(sqrt(n)) + 1, 2):
         if n % i == 0:
             return False
 
@@ -95,7 +111,7 @@ def zad_9(n):
 # Задание 10
 
 def zad_10(n):
-    print([x for x in range(2, n+1) if zad_9(x)])
+    print([x for x in range(2, n + 1) if zad_9(x)])
 
 
 # Задание 11
@@ -122,8 +138,22 @@ def zad_11(n):
 
 # Задание 12
 
-def zad_12():
-    pass
+# t: 1 - bin, 2 - oct, 3 - hex
+def zad_12(a, t):
+    if t == 1:
+        if a > 1:
+            zad_12(a // 2, 1)
+        print(a % 2, end="")
+    elif t == 2:
+        if a > 7:
+            zad_12(a // 8, 2)
+        print(a % 8, end="")
+    elif t == 3:
+        if a > 15:
+            zad_12(a // 16, 3)
+        print(a % 16, end="")
+    else:
+        print("Неправильний тип!")
 
 
 # Задание 13
