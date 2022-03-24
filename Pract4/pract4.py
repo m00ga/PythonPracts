@@ -1,6 +1,4 @@
 from math import sqrt
-# from time import time
-import random
 
 
 # Задание 1
@@ -14,11 +12,13 @@ def zad_1(a, b, h):
 # Задание 2
 
 def zad_2(a, b, c):
-    p = (a + b + c) / 2
-    s = sqrt(p * (p - a) * (p - b) * (p - c))
-    # print(f"Площа трикутника: {s}")
-
-    return s
+    if a + b > c and a + c > b and b + c > a:
+        p = (a + b + c) / 2
+        s = sqrt(p * (p - a) * (p - b) * (p - c))
+        return s
+    else:
+        print("Такого трикутника не існує")
+        return None
 
 
 # Задание 3
@@ -138,7 +138,7 @@ def zad_11(n):
 
 # Задание 12
 
-# t: 1 - bin, 2 - oct, 3 - hex
+# t: 1 - bin, 2 - oct
 def zad_12(a, t):
     if t == 1:
         if a > 1:
@@ -148,31 +148,12 @@ def zad_12(a, t):
         if a > 7:
             zad_12(a // 8, 2)
         print(a % 8, end="")
-    elif t == 3:
-        if a > 15:
-            zad_12(a // 16, 3)
-        print(a % 16, end="")
+    # elif t == 3:
+    #     if a > 15:
+    #         zad_12(a // 16, 3)
+    #     print(a % 16, end="")
     else:
         print("Неправильний тип!")
-
-
-# Задание 13
-# TODO: make working game, but later
-
-# Пятнашки
-def zad_13():
-    pole = [
-        [],
-        [],
-        [],
-        [],
-    ]
-
-    for i in range(0, 4):
-        for _ in range(0, 4):
-            pole[i].append(random.randint(1, 15))
-
-    print(pole)
 
 
 if __name__ == '__main__':
